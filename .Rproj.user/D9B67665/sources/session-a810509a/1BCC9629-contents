@@ -1,0 +1,19 @@
+# Creating a function in an R scriot and then use this function in other workflows using the function source().
+ # Lets create a function that adds a categorical variable to a df having bmi.
+
+
+bmi_category <- function(df) {
+  if (!requireNamespace("dplyr", quitely=TRUE)) {
+    stop("The function requires the package dplyr to run")
+  }
+  df_processed <- df |>
+    as.numeric(as.character(bmi)) %>%
+    dplyr::mutate(category_bmi= cut(
+      x=bmi,
+      breaks= c(-Inf, 18.5, 25, 30, 35),
+      labels= c("underweight", "normal_weight", "overweight", "obese", "morbidly_obese"),
+      right= TRUE
+    )
+  )
+  return(df_processed)
+}

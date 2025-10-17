@@ -1,0 +1,34 @@
+# Load your newly installed package
+library(Alztool)
+library(dplyr) # We load dplyr only to create the test data, not for the function itself
+
+# 1. Create Sample Data (The BMI values are the test input)
+test_data <- data.frame(
+  subject_id = 1:5,
+  bmi = c(17.2, 22.5, 26.8, 33.0, 41.5) 
+)
+
+# 2. Run the function from your new package
+# If the package installed correctly, this function call will succeed.
+result_df <- classify_bmi(test_data)
+
+# 3. Print the result to verify the new column was created correctly
+print(result_df)
+
+# Expected Output Verification:
+#   subject_id  bmi bmi_category
+# 1          1 17.2  underweight
+# 2          2 22.5 normalweight
+# 3          3 26.8   overweight
+# 4          4 33.0        obese
+# 5          5 41.5 morbidly obese
+
+
+# --- Test Data Setup ---
+ test_data_mmse <- data.frame(
+   subject_id = 1:5,
+   mmse = c(28, 26, 23, 19, 15)
+ )
+
+# # --- Example Usage for MMSE ---
+ standardize_mmse(test_data_mmse)
