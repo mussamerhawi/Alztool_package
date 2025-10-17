@@ -9,9 +9,7 @@ You can install the development version of Alztool directly from GitHub using th
  If you don't have devtools installed:
  install.packages("devtools") 
 
-devtools::install_github("YourGitHubUsername/Alztool")
-
-(NOTE: Remember to replace YourGitHubUsername/Alztool with your actual username!)
+devtools::install_github("mussamerhawi/Alztool")
 
 ✨ Core Functions and Usage
 Alztool currently contains two essential data processing functions, which use tidyverse syntax (dplyr) for efficiency.
@@ -21,27 +19,17 @@ Categorizes body mass index (BMI) according to standard World Health Organizatio
 
 BMI Range
 
-Category
+**Category**
 
-< 18.5
+< 18.5  underweight
 
-underweight
+18.5 - 24.9  normalweight
 
-18.5 - 24.9
+25.0 - 29.9  overweight
 
-normalweight
+30.0 - 34.9  obese (Class 1)
 
-25.0 - 29.9
-
-overweight
-
-30.0 - 34.9
-
-obese (Class 1)
-
-> 35.0
-
-morbidly obese
+> 35.0  morbidly obese
 
 Example:
 
@@ -53,6 +41,7 @@ raw_data <- data.frame(
 )
 
 classify_bmi(raw_data)
+
 ## Expected Output: A data frame with the new 'bmi_category' column.
 
 **2. standardize_mmse()**
