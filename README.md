@@ -29,7 +29,7 @@ BMI Range
 
 30.0 - 34.9  obese (Class 1)
 
->35.0  morbidly obese
+>=35.0  morbidly obese
 
 
 Example:
