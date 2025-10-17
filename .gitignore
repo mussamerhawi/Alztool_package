@@ -1,7 +1,8 @@
 --- R Specific Files ---
   .Rproj
 .RData
-.Rhistory
+.Rapp.history
+.gitattributes
 .Rbuildignore
 .Rprofile
 .Rinstparams
