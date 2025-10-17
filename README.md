@@ -31,6 +31,7 @@ BMI Range
 
 >35.0  morbidly obese
 
+
 Example:
 
 library(Alztool)
