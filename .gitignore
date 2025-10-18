@@ -1,5 +1,5 @@
---- R Specific Files ---
-  .Rproj
+# R Specific Files
+.Rproj
 .RData
 .Rapp.history
 .gitattributes
@@ -9,21 +9,21 @@
 *.RData
 *.Rhistory
 
-R check directory (very large)
-_R_check
+# R check directory (very large)
+_R_check/
 .Rcheck/
-  /vignettes/.html
-/vignettes/.pdf
+vignettes/*.html
+vignettes/*.pdf
 
---- macOS Specific Files ---
-  .DS_Store
+# macOS Specific Files
+.DS_Store
 
---- RStudio Specific Files ---
-  .Rproj.user/
-  .Rlibs/
+# RStudio Specific Files
+.Rproj.user/
+.Rlibs/
 
-  --- Temporary/Compiled Files ---
-  *.o
+# Temporary/Compiled Files
+*.o
 *.so
 *.dll
 *.class
