@@ -9,7 +9,7 @@ You can install the development version of Alztool directly from GitHub using th
  If you don't have devtools installed:
  install.packages("devtools") 
 
-devtools::install_github("mussamerhawi/Alztool")
+devtools::install_github("mussamerhawi/Alztool_package")
 
 ✨ Core Functions and Usage
 Alztool currently contains two essential data processing functions, which use tidyverse syntax (dplyr) for efficiency.
