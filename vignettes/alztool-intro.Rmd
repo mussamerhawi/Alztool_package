@@ -1,0 +1,76 @@
+---
+title: "Introduction to Alztool: Standardizing Clinical Data"
+date: "r Sys.Date()"
+author: "Merhawi Mussa"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to alztool}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+```{r}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Overview
+The Alztool package provides standardized, reproducible functions for transforming raw clinical variables (like BMI and MMSE scores) into categorized features commonly used in Alzheimer's Disease and health informatics research. This vignette demonstrates the package's core functionality using a simulated dataset.
+
+## Installation
+The package can be installed directly from GitHub using the devtools package:
+
+ Install devtools if necessary
+ install.packages("devtools") 
+
+devtools::install_github("mussamerhawi/Alztool")
+
+
+### 1. Load the Package and Simulate Data
+First, we load the package and create a small sample dataset that mimics the structure of your full Alzheimer's dataset.
+```{r}
+library(Alztool)
+library(dplyr)
+library(knitr)
+
+# Simulate a small dataset for demonstration
+sim_data <- data.frame(
+  patient_id = 101:105,
+  bmi = c(17.9, 23.5, 28.1, 32.0, 39.9),
+  mmse = c(29, 21, 25, 18, NA),
+  # Other columns to match your real dataset structure
+  age = c(70, 75, 68, 80, 72) 
+)
+
+# Display the starting data
+kable(sim_data)
+```
+
+### 2. Standardize Cognitive Status (standardize_mmse)
+We use the standardize_mmse function to classify subjects as "Impaired," "Not Impaired," or "Missing" based on a cutoff score of 24.
+```{r}
+data_mmse_classified <- sim_data %>%
+  standardize_mmse()
+
+# Display the results
+kable(data_mmse_classified)
+
+```
+
+### 3. Classify Body Mass Index (classify_bmi)
+Next, we apply the classify_bmi function to categorize the raw BMI scores into standard WHO categories (Underweight, Normal, Overweight, Obese Class 1/2/3).
+```{r}
+final_classified_data <- data_mmse_classified %>%
+  classify_bmi()
+
+# Select only the key columns for easy viewing
+final_classified_data <- final_classified_data %>%
+  select(patient_id, bmi, bmi_category, mmse, cognitive_status)
+
+# Display the final results, showing the success of the classification
+kable(final_classified_data)
+```
+
+## Summary
+The Alztool package successfully transforms raw numeric inputs into categorical variables (bmi_category and cognitive_status), providing a reliable and reproducible first step for clinical data analysis.
