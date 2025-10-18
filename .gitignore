@@ -1,4 +1,5 @@
 # R Specific Files
+.Rproj.user/
 .Rproj
 .RData
 .Rapp.history
