@@ -17,9 +17,7 @@ Alztool currently contains two essential data processing functions, which use ti
 **1. classify_bmi()**
 Categorizes body mass index (BMI) according to standard World Health Organization (WHO) cutoffs, which is crucial for cohort analysis.
 
-BMI Range
-
-**Category**
+**BMI Categories**
 
 <18.5  underweight
 
