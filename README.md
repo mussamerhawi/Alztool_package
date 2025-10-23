@@ -5,12 +5,12 @@ This package is an essential part of a portfolio demonstrating end-to-end R pack
 
 ## 💾 Installation
 You can install the development version of Alztool directly from GitHub using the devtools package:
-
- If you don't have devtools installed:
+```
+ # If you don't have devtools installed:
  install.packages("devtools") 
 
 devtools::install_github("mussamerhawi/Alztool_package")
-
+```
 ✨ Core Functions and Usage
 Alztool currently contains two essential data processing functions, which use tidyverse syntax (dplyr) for efficiency.
 
@@ -27,11 +27,11 @@ Categorizes body mass index (BMI) according to standard World Health Organizatio
 
 30.0 - 34.9  obese (Class 1)
 
-=>35.0  morbidly obese
+35.0 and above  morbidly obese
 
 
 Example:
-
+```
 library(Alztool)
 
 raw_data <- data.frame(
@@ -40,7 +40,7 @@ raw_data <- data.frame(
 )
 
 classify_bmi(raw_data)
-
+```
 ## Expected Output: A data frame with the new 'bmi_category' column.
 
 **2. standardize_mmse()**
@@ -49,7 +49,7 @@ Classifies cognitive status based on the Mini-Mental State Examination (MMSE) sc
 Cutoff: Scores below 24 are typically categorized as "Impaired."
 
 Example:
-
+```
 library(Alztool)
 
 raw_data <- data.frame(
@@ -58,6 +58,7 @@ raw_data <- data.frame(
 )
 
 standardize_mmse(raw_data)
+```
 ## Expected Output: A data frame with the new 'cognitive_status' column (Not Impaired, Impaired, Missing).
 
 🤝 Contribution and License
